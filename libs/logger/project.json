@@ -1,0 +1,26 @@
+{
+  "name": "logger",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/logger/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/logger",
+        "main": "libs/logger/src/index.ts",
+        "tsConfig": "libs/logger/tsconfig.lib.json",
+        "assets": ["libs/logger/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs logger {args.ver} {args.otp} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": []
+}

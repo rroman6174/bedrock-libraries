@@ -1,0 +1,26 @@
+{
+  "name": "math",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/math/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/math",
+        "main": "libs/math/src/index.ts",
+        "tsConfig": "libs/math/tsconfig.lib.json",
+        "assets": ["libs/math/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs math {args.ver} {args.tag} {command}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": []
+}

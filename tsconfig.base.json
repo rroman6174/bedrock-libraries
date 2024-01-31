@@ -9,13 +9,15 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "esnext",
+    "module": "ES2020",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bedrock-libraries/database": ["database/src/index.ts"]
+      "@bedrock-libraries/database": ["libs/database/src/index.ts"],
+      "@bedrock-libraries/logger": ["libs/logger/src/index.ts"],
+      "@bedrock-libraries/math": ["libs/math/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
