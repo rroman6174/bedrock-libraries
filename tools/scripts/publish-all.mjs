@@ -3,7 +3,6 @@ import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { glob } from 'glob-promise';
 import { publishVersion } from './publish.mjs';
-import * as packageJson from '../../package.json';
 const parse = JSON.parse;
 const stringify = JSON.stringify;
 // Update root package.json version
