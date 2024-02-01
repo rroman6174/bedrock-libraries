@@ -13,7 +13,7 @@
     "preversion": "npm run all",
     "publish": "npm run all && node ./tools/scripts/publish-all.mjs"
   },
-  "private": false,
+  "private": true,
   "devDependencies": {
     "@minecraft/math": "^1.0.1",
     "@minecraft/server": "^1.7.0",

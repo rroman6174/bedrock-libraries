@@ -20,7 +20,7 @@ function invariant(condition, message) {
   }
 }
 
-export function publishVersion(name, otp, tag = 'next') {
+export function publishVersion(name, otp, version, tag = 'next') {
   // A simple SemVer validation to validate the version
   const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
   invariant(

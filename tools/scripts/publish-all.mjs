@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
-import path from 'path';
+import path, { join } from 'path';
 import { glob } from 'glob-promise';
 import { publishVersion } from './publish.mjs';
 const parse = JSON.parse;
@@ -10,12 +10,17 @@ const stringify = JSON.stringify;
 
 // Assuming your libraries are located under 'libs' directory
 const libraries = glob.glob.sync('libs/*');
-const [, , otp] = process.argv;
-if (!otp) {
-  console.error('No OTP token provided.');
-  process.exit(1);
-}
 
 for (const library of libraries) {
-  publishVersion(path.basename(library), otp);
+  try {
+    const version = JSON.parse(readFileSync('./package.json')).version;
+    const tag = 'next';
+    execSync(`npm publish --access public --tag ${tag}`, {
+      cwd: join('dist', library),
+      stdio: 'inherit',
+    });
+  } catch (error) {
+    console.log(`Publish failed for ${library}`);
+    console.error(error);
+  }
 }
