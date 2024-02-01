@@ -9,7 +9,8 @@
     "format:write": "nx format:write",
     "format:check": "nx format",
     "all": "npm run lint:fix && npm run format:write && npm run build:all",
-    "version": "node ./tools/scripts/version.mjs"
+    "version": "node ./tools/scripts/version.mjs",
+    "prepublish": "npm run all"
   },
   "private": false,
   "devDependencies": {
