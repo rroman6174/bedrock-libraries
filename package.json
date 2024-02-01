@@ -10,6 +10,7 @@
     "format:check": "nx format",
     "all": "npm run lint:fix && npm run format:write && npm run build:all",
     "version": "node ./tools/scripts/version.mjs",
+    "preversion": "npm run all",
     "publish": "npm run all && node ./tools/scripts/publish-all.mjs"
   },
   "private": false,
