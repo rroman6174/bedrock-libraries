@@ -8,7 +8,8 @@
     "lint:check": "nx run-many -t lint",
     "format:write": "nx format:write",
     "format:check": "nx format",
-    "all": "npm run lint:fix && npm run format:write && npm run build:all"
+    "all": "npm run lint:fix && npm run format:write && npm run build:all",
+    "version": "node ./tools/scripts/version.mjs"
   },
   "private": false,
   "devDependencies": {
@@ -26,6 +27,7 @@
     "@typescript-eslint/parser": "^6.13.2",
     "eslint": "~8.48.0",
     "eslint-config-prettier": "^9.0.0",
+    "json5": "^2.2.3",
     "move": "^0.4.9",
     "nx": "17.3.0",
     "prettier": "^2.6.2",
@@ -38,5 +40,8 @@
   ],
   "nx": {
     "includedScripts": []
+  },
+  "dependencies": {
+    "glob-promise": "^6.0.5"
   }
 }
