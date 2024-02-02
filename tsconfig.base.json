@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@bedrock-libraries/common": ["libs/common/src/index.ts"],
       "@bedrock-libraries/database": ["libs/database/src/index.ts"],
       "@bedrock-libraries/logger": ["libs/logger/src/index.ts"],
       "@bedrock-libraries/math": ["libs/math/src/index.ts"]
