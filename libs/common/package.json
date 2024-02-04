@@ -2,7 +2,10 @@
   "name": "@bedrock-libraries/common",
   "version": "0.0.3-0",
   "dependencies": {
-    "tslib": "^2.3.0"
+    "@minecraft/server": "^1.7.0",
+    "@minecraft/server-ui": "^1.1.0",
+    "tslib": "^2.3.0",
+    "@minecraft/math": "^1.0.1"
   },
   "type": "module",
   "main": "./src/index.js",
